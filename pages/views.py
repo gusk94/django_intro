@@ -79,3 +79,32 @@ def lotto(request):
         'lotto': sorted(lotto)
     }
     return render(request, 'lotto.html', context)
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def result(request):
+    query = request.GET.get('query')
+    category = request.GET.get('category')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+
+def lotto_pick(request):
+    return render(request, 'lotto_pick.html')
+
+
+def lotto_result(request):
+    lotto_num = request.GET.get('lotto').split()
+    lotto_num = sorted(list(map(int, lotto_num)))
+    re_lotto = [21, 25, 30, 32, 40, 42]
+    context = {
+        're_lotto': re_lotto,
+        'lotto_num': lotto_num, 
+    }
+    return render(request, 'lotto_result.html', context)

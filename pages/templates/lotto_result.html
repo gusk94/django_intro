@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lotto Result</title>
+</head>
+<body>
+  <h1>Result</h1>
+  <hr>
+  <p>로또 결과: {{ re_lotto }}</p>
+  <p>입력 내용: {{ lotto_num }}</p>
+  <hr>
+  {% if lotto_num|length == 6 %}
+    {% if re_lotto == lotto_num %}
+    <p>당첨입니다!</p>
+    {% else %}
+    <p>아쉽네요...</p>
+    {% endif %}
+  {% else %}
+    <p>6개의 숫자를 공백을 기준으로 입력해주세요.</p>
+  {% endif %}
+</body>
+</html>
