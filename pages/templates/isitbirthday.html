@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Birthday</title>
+</head>
+<body>
+  <h1>Is it Birthday?</h1>
+  {% now "m월 d일" as current %}
+  {% if current == "08월 16일" %}
+  <p>네</p>
+  {% else %}
+  <p>아니오</p>
+  {% endif %}
+</body>
+</html>
