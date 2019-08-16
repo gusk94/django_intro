@@ -108,3 +108,7 @@ def lotto_result(request):
         'lotto_num': lotto_num, 
     }
     return render(request, 'lotto_result.html', context)
+
+
+def static_example(request):
+    return render(request, 'static_example.html')
