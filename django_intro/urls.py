@@ -1,5 +1,4 @@
 """django_intro URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
@@ -15,29 +14,12 @@ Including another URLconf
 """
 # django_intro/urls.py
 from django.contrib import admin
-from django.urls import path
-from pages import views
+from django.urls import path, include
 
-# www.ssafy.com/login => 404 not found
-# www.ssafy.com/index => views.index
+# www.ssafy.com/pages/index
 urlpatterns = [
     # path('사용자가 접속하는 경로')
-    path('static_example/', views.static_example),
-
-    path('lotto_pick/', views.lotto_pick),
-    path('lotto_result/', views.lotto_result),
-
-    path('result/', views.result),
-    path('search/', views.search),
-
-    path('lotto/', views.lotto),
-    path('isitbirthday/', views.isitbirthday),
-    path('template_language/', views.template_language),
-    path('times/<int:num1>/<int:num2>/', views.times),
-    path('greeting/<str:name>/', views.greeting),
-    path('image/', views.image),
-    path('dinner/<str:name>/', views.dinner),
-    path('index/', views.index),
-    path('introduce/', views.introduce),
+    path('utilities/', include('utilities.urls')),
+    path('pages/', include('pages.urls')),
     path('admin/', admin.site.urls),
 ]

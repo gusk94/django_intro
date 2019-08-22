@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Static Example{% endblock %}
+
+{% block content %}
+  <h1>STATIC 파일 실습</h1>
+  <img src="{% static 'pages/images/강아지.jpg' %}" alt="dog">
+{% endblock %}
